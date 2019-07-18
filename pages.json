@@ -1,0 +1,10 @@
+{
+  "help":{
+    "path": "./src/pages/help/help.js",
+    "title": "帮助"
+  },
+  "home":{
+    "path": "./src/pages/home/home.js",
+    "title": "主页"
+  }
+}
