@@ -1,12 +1,35 @@
 <template>
   <div class="page-body">
     <div class="navi-bar">
-      <div class="navi-text">关于我们</div>
-      <div class="navi-text">北京大学学生模拟联合国交流会</div>
+      <div class="navi-text" @mouseenter="showMenu1" @mouseleave="hideMenu1">关于我们</div>
+      <div class="navi-text" @mouseenter="showMenu2" @mouseleave="hideMenu2">北京大学学生模拟联合国交流会</div>
       <div class="navi-text">世界模拟联合国大会</div>
       <div class="navi-text">联系我们</div>
       <div class="navi-text">常见问题</div>
     </div>
+
+    <div class="menu menu-1" v-if="show1 || control1" @mouseenter="showLong1">
+      <div class="item">北京大学</div>
+      <div class="item">模拟联合国大会</div>
+      <div class="item">秘书长寄语</div>
+      <div class="item" @mouseenter="showMenu3" @mouseleave="hideMenu3">组委介绍</div>
+    </div>
+    <div class="menu menu-2" v-if="show2">
+      <div class="item">简介</div>
+      <div class="item">委员会及议题设置</div>
+      <div class="item">议事规则</div>
+      <div class="item">大会日程</div>
+      <div class="item" @mouseenter="showMenu4" @mouseleave="hideMenu4">报名注册</div>
+    </div>
+    <div class="menu menu-3" v-if="show3">
+      <div class="item">简介</div>
+      <div class="item">委员会及议题设置</div>
+    </div>
+    <div class="menu menu-4" v-if="show4">
+      <div class="item">简介</div>
+      <div class="item">委员会及议题设置</div>
+    </div>
+
     <div class="content">
       在传统的JavaScript应用程序中，需要查看哪些数据已更改，并且必须对DOM进行更改以使其保持最新状态。频繁的 DOM 操作会导致浏览器对 DOM 树进行大量计算，性能降低。因此，合并多次的 DOM 操作，然后适时的，一次性的对 DOM 树集中进行一次操作，就可以大大提升前端性能。
 
@@ -29,7 +52,7 @@
 
       声明式代码
 
-      “声明式代码”“命令式代码”的不同（What & How）：
+      “声明式代码”“命令式代码”的不同（What  How）：
       - 声明式代码： 感受到天气太热，编写代码： 1. 调用“开空调(27)”函数；
       - 命令式代码： 感受到天气太热，编写代码： 1. 拿起空调遥控器； 2. 打开空调； 3. 设置温度为 27 摄氏度；
 
@@ -40,19 +63,114 @@
     </div> 
   </div>
 </template>
+<script>
+import { setTimeout } from 'timers';
+export default {
+  data(){
+    return{
+      show1:false,
+      show2:false,
+      show3:false,
+      show4:false,
+      control1:false,
+    }    
+  },
+  methods:{
+    showMenu1(){
+      setTimeout(()=>{
+        this.show1 = true;
+        this.show2 = false;
+        },300);
+    },
+    showMenu2(){
+      setTimeout(()=>{
+        this.show2 = true;
+        this.show1 = false;
+        },300);
+    },
+    showMenu3(){
+      setTimeout(()=>{
+      this.show3 = true
+      },300);
+    },
+    showMenu4(){
+      setTimeout(()=>{
+      this.show4 = true
+      },300);
+    },
+    showLong1(){
+      this.control1=true;
+    },
+    hideMenu1(){
+      setTimeout(()=>{
+        this.show1 = false;
+        this.show3 = false;
+        },2000);
+    },
+    hideMenu2(){
+      setTimeout(()=>{
+      this.show2 = false
+      this.show4 = false
+      },2000);
+    },
+    hideMenu3(){
+      setTimeout(()=>{
+      this.show3 = false
+      },2000);
+    },
+    hideMenu4(){
+      setTimeout(()=>{
+      this.show4 = false
+      },2000);
+    },
+  }
+}
+</script>
+
+
 
 <style lang="stylus">
 .page-body
   width 100%
   margin-top 60px
+  background-color grey
+  border 1px solid black
   .navi-bar
     font-size 20px
     display flex
     flex-direction row
     justify-content space-evenly
     align-items center
+    
     .navi-text
-      width 200px
+      border 1px solid black
+      width 20%
+      height 60px
+      display flex
+      align-items center
+      justify-content center
+  .menu
+    background-color white
+    width 20%
+    text-align left
+    margin-top 20px
+    position absolute
+    :hover
+      display block
+    .item 
+      margin-left 20px
+      height 30px
+  .menu-1
+    left 5%
+  .menu-2
+    left 25%
+  .menu-3
+    left 25%
+    top 690px
+  .menu-4
+    left 45%
+    top 720px
+    
   .content
     font-size 18px
     line-height 24px
