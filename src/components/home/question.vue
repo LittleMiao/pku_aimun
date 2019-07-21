@@ -1,5 +1,5 @@
 <template>
   <div>
-    是帮助页面
+    常见问题
   </div>
 </template>

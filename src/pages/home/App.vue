@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import imgSwiper from '../../components/imgSwiper'  
-import mainContent from '../../components/mainContent'
+import imgSwiper from '../../components/home/imgSwiper'  
+import mainContent from '../../components/home/mainContent'
 
 export default {
   name: 'app',
@@ -94,7 +94,7 @@ export default {
       .log-item
         width 50px
   .swiper-slide
-    height:400px;
+    height 400px
 
 
 </style>
