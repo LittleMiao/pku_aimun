@@ -1,0 +1,15 @@
+<template>
+  <div>
+    <table>
+      <tbody>
+        <tr>
+          <td>2019年12月13日（周五）</td>
+        </tr>
+        <tr>
+          <td>08:00-09:30</td>
+          <td>代表注册</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
