@@ -1,5 +1,5 @@
 <template>
   <div>
-    是注册页面
+    是个人中心
   </div>
 </template>

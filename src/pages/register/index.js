@@ -5,7 +5,6 @@ import Router from 'vue-router'
 import 'element-ui/lib/theme-chalk/index.css'
 import '../../assets/icon/iconfont.css'
 
-Vue.use(Router)
 Vue.use(Element)
 
 Vue.config.productionTip = false
