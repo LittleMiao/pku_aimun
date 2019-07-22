@@ -27,7 +27,7 @@
     </div>
     <div class="menu menu-4" v-if="show4 || control4" @mouseenter="showLong4" @mouseleave="hideLong4">
       <div class="item" @click="contentIndex=11">报名注册须知</div>
-      <div class="item" @click="gotoSignup">点击报名</div>
+      <div class="item" @click="gotoRegister">点击报名</div>
     </div>
 
     <div class="content">
@@ -58,7 +58,7 @@
       <topicSetting v-else-if="contentIndex===8"></topicSetting>
       <rules v-else-if="contentIndex===9"></rules>
       <schedule v-else-if="contentIndex===10"></schedule>
-      <signupInfo v-else-if="contentIndex===11"></signupInfo>
+      <registerInfo v-else-if="contentIndex===11"></registerInfo>
 
       <world v-else-if="contentIndex===12"></world>
       <contactus v-else-if="contentIndex===13"></contactus>
@@ -79,7 +79,7 @@ import aimunInfo from './aimunInfo';
 import topicSetting from './topicSetting';
 import rules from './rules';
 import schedule from './schedule';
-import signupInfo from './signupInfo';
+import registerInfo from './registerInfo';
 
 import world from './world';
 import contactus from './contactus';
@@ -114,14 +114,14 @@ export default {
     topicSetting,
     rules,
     schedule,
-    signupInfo,
+    registerInfo,
     world,
     contactus,
     question
   },
   methods:{
-    gotoSignup(){
-      location.href="./signup.html"
+    gotoRegister(){
+      location.href="./register.html"
     },
     timeDown () {
       const endTime = new Date(this.endTime)

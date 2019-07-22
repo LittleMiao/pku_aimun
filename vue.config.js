@@ -20,7 +20,8 @@ module.exports = {
     // 只有entry属性时，直接用字符串表示模块入口
     help: 'src/pages/help/index.js',
     login: 'src/pages/login/index.js',
-    signup: 'src/pages/signup/index.js',
+    register: 'src/pages/register/index.js',
+    personal: 'src/pages/personal/index.js'
   },
   runtimeCompiler: true
 }
