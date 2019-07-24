@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="head">
-      <div>北京大学亚洲国际模拟联合国大会</div>
-    </div>
+    <topblock />
     <el-form labelWidth="80px" label-position="left">
       <el-form-item label="用户名">
         <el-input size="medium" type="text" v-model="userName" placeholder="邮箱" clearable></el-input>
@@ -37,7 +35,11 @@
 
 
 <script>
+import topblock from '../../components/common/topblock'
 export default {
+  components:{
+    topblock
+  },
   data() {
     return {
       userName: '',

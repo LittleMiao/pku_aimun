@@ -21,6 +21,7 @@ module.exports = {
     help: 'src/pages/help/index.js',
     login: 'src/pages/login/index.js',
     register: 'src/pages/register/index.js',
+    signup: 'src/pages/signup/index.js',
     personal: 'src/pages/personal/index.js'
   },
   runtimeCompiler: true
