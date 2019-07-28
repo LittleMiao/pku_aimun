@@ -9,13 +9,8 @@ import '../../assets/icon/iconfont.css'
 Vue.config.productionTip = false
 Vue.use(Element)
 Vue.use(Router)
-
-const router = new Router({
-  mode: 'history'
-})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  render: h => h(App),
-  router
+  render: h => h(App)
 })

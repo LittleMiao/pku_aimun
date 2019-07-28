@@ -11,7 +11,7 @@
     <div v-else-if="stage===1">
       <div>第一部分：基本信息录入</div>
       <div>
-        <el-form labelWidth="200px" label-position="left" :model="firstStage">
+        <el-form labelWidth="200px" label-position="left" :model="firstStage" :disabled="pathinfo==='person'">
           <div>
             <div>1. </div>
             <el-form-item label="学校名称 Name of School">
@@ -31,7 +31,7 @@
     <div v-else-if="stage===2">
       <div>代表个人信息</div>
       <div>
-        <el-form labelWidth="200px" label-position="left">
+        <el-form labelWidth="200px" label-position="left" :disabled="pathinfo==='person'">
           <div>
             <div>1. </div>
             <el-form-item label="姓名">
@@ -138,7 +138,7 @@
     </div>
     <div v-else-if="stage===3">
       <div>第二部分：参会意愿统计</div>
-      <el-form>
+      <el-form :disabled="pathinfo==='person'">
         <el-form-item :label="pos" v-for="(pos,index) in thirdStage.label" :key="pos">
           <el-select v-model="thirdStage.selectNum[index]" placeholder="0" @change="updateAva(index)">
             <el-option :label="0" :value="0" ></el-option>
@@ -165,11 +165,11 @@ export default {
     headbar,
     topblock,
     footerInfo,
-    
   },
   data(){
     return{
-      stage: 0,
+      pathinfo: this.$route.query.from,
+      stage: this.$route.query.from==="person"? 1: 0,
       addNum: 0,
       firstStage:{
         schoolName: '',
