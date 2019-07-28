@@ -26,17 +26,7 @@ export default {
   },
   mounted() {  
   },
-  methods:{
-    toHelp(){
-      location.href="/help.html"
-    },
-    toSignUp(){
-      location.href="/signup.html"
-    },
-    toLogin(){
-      location.href="/login.html"
-    }
-  }
+
 }
 </script>
 

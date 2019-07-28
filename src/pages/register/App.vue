@@ -2,9 +2,7 @@
   <div>
     <headbar />
     <div>
-      <div class="head">
-        <div>北京大学亚洲国际模拟联合国大会</div>
-      </div>
+      <topblock />
       <div>注册</div>
       <div>请注意：停止注册时间为（报名截止前两天就停止注册，待补日期）</div>
       <el-form labelWidth="200px" label-position="left">
@@ -45,8 +43,12 @@
 
 <script>
 import headbar from '../../components/common/headbar'
-
+import topblock from '../../components/common/topblock'
 export default {
+  components:{
+    headbar,
+    topblock
+  },
   data(){
     return {
       email: '',
