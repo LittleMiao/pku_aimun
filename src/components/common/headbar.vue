@@ -1,11 +1,13 @@
 <template>
-  <div class="head-tip">
-    <div id="time">{{date | formateDate }}</div>
-    <div class="log-info" > 
-      <div class="log-item" @click="toLogin" v-if="!isLogin"> 登录 </div>
-      <div class="log-item" @click="toRegister" v-if="!isLogin"> 注册 </div>
-      <div class="log-item" @click="toPersonal" v-else-if="isLogin">个人中心</div>
-      <div class="log-item" @click="toHelp"> 帮助 </div>
+  <div class="head-wrapper">
+    <div class="head-tip">
+      <div id="time">{{date | formateDate }}</div>
+      <div class="log-info" > 
+        <div class="log-item" @click="toLogin" v-if="!isLogin"> 登录 </div>
+        <div class="log-item" @click="toRegister" v-if="!isLogin"> 注册 </div>
+        <div class="log-item" @click="toPersonal" v-else-if="isLogin">个人中心</div>
+        <div class="log-item" @click="toHelp"> 帮助 </div>
+      </div>
     </div>
   </div>
 </template>
@@ -62,19 +64,23 @@ export default {
 </script>
 
 <style lang="stylus">
-.head-tip
-  display flex
-  flex-direction row
-  justify-content space-between
-  align-items center
-  .log-info
+.head-wrapper
+  width 100%
+  background-color rgb(165,42,42)
+  color #E5E3E3
+  height 60px
+  .head-tip
+    padding  20px 60px
     display flex
     flex-direction row
-    justify-content space-evenly
-    .log-item
-      width 50px
-.swiper-slide
-  height 400px
+    justify-content space-between
+    align-items center
+    .log-info
+      display flex
+      flex-direction row
+      justify-content space-evenly
+      .log-item
+        width 50px
 
 </style>
 
